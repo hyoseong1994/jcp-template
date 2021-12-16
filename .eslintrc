@@ -1,0 +1,35 @@
+{
+	"plugins": ["prettier"],
+	"extends": ["react-app", "plugin:prettier/recommended", "airbnb-base", "prettier"],
+	"rules": {
+		"prettier/prettier": "off",
+		// When you break the prettier rules, release the rule build error
+		"react/jsx-filename-extension": [1, { "extensions": ["js", "jsx"] }],
+		// js, jsx Extensions allowed.
+		"arrow-parens": ["warn", "as-needed"],
+		// If there is only one arrow function parameter, skip bracket
+		"no-unused-vars": ["off"],
+		// When there is a variable that is not used, release the rule build error
+		"no-console": ["off"],
+		// When there is a console that is used, release the rule build error
+		"import/prefer-default-export": ["off"],
+		// When there is a export const that is used, release the rule build error
+		"react-hooks/exhaustive-deps": ["warn"],
+		// Mitigating the rule of forcibly adding dependence when hooks' dependence arrangement is insufficient.
+		"react/jsx-props-no-spreading": ["warn"],
+		// When there is a props spreading that is used, release the rule build error
+		"react/prop-types": ["off"],
+		// When there is a props type check that is not used, release the rule build error
+		"no-underscore-dangle": ["off"]
+		// When there is a camelCase that is not used, release the rule build error
+		// ex) eslint_camel
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"moduleDirectory": ["node_modules", "."]
+				// Setting the absolute path.
+			}
+		}
+	}
+}
