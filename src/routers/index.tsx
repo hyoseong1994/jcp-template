@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
-import Header from 'components/organization/Header';
-import Footer from 'components/organization/Footer';
-import Sider from 'components/organization/Sider';
+import Header from '../components/organization/Header';
+import Footer from '../components/organization/Footer';
+import Sider from '../components/organization/Sider';
 
 import 'antd/dist/antd.css';
 
-const About = React.lazy(() => import('components/template/About'));
-const Dashboard = React.lazy(() => import('components/template/Dashboard'));
-const NoMatch = React.lazy(() => import('components/template/NoMatch'));
+const About = React.lazy(() => import('../components/template/About'));
+const Dashboard = React.lazy(() => import('../components/template/Dashboard'));
+const NoMatch = React.lazy(() => import('../components/template/NoMatch'));
 const { Content } = Layout;
 
-export default function router() {
+export default function router(): JSX.Element {
 	return (
 		<>
 			<Header />

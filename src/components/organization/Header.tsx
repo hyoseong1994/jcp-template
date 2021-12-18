@@ -1,8 +1,8 @@
-import react from 'react';
-import Button from 'components/atoms/Button';
+import React from 'react';
+import Button from '../../components/atoms/Button';
 import { PageHeader } from 'antd';
 
-const Header = () => (
+const Header = (): JSX.Element => (
 	<PageHeader
 		className="site-page-header"
 		onBack={() => window.history.back()}
@@ -15,5 +15,4 @@ const Header = () => (
 		]}
 	/>
 );
-
 export default Header;

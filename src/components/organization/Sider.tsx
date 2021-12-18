@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Menu, Layout } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-const StyledLayout = () => (
+const StyledLayout = (): JSX.Element => (
 	<Sider>
 		<Menu
 			mode="inline"
 			defaultSelectedKeys={['1']}
 			defaultOpenKeys={['sub1']}
-			style={{ height: '100%', borderRight: 0, minWidth: 300 }}
+			style={{ height: '100%', borderRight: 0, width: 200 }}
 		>
 			<SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
 				<Menu.Item key="1">

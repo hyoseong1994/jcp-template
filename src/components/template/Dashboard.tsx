@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-export default function Dashboard() {
+export default function Dashboard(): JSX.Element {
 	// These routes are defined when this component is loaded on demand via
 	// dynamic import() on the home page!
 	return (
@@ -14,7 +14,7 @@ export default function Dashboard() {
 	);
 }
 
-function DashboardLayout() {
+function DashboardLayout(): JSX.Element {
 	return (
 		<div>
 			<nav>
@@ -35,7 +35,7 @@ function DashboardLayout() {
 	);
 }
 
-function DashboardIndex() {
+function DashboardIndex(): JSX.Element {
 	return (
 		<div>
 			<h2>Dashboard Index</h2>
@@ -43,7 +43,7 @@ function DashboardIndex() {
 	);
 }
 
-function Messages() {
+function Messages(): JSX.Element {
 	return (
 		<div>
 			<h2>Messages</h2>

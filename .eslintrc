@@ -1,10 +1,22 @@
 {
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"env": {
+		"node": true
+	},
 	"plugins": ["prettier"],
-	"extends": ["react-app", "plugin:prettier/recommended", "airbnb-base", "prettier"],
+	"extends": [
+		// "airbnb-base",
+		// "prettier",
+		// "plugin:prettier/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
 	"rules": {
-		"prettier/prettier": "off",
+		// "prettier/prettier": "off",
 		// When you break the prettier rules, release the rule build error
-		"react/jsx-filename-extension": [1, { "extensions": ["js", "jsx"] }],
+		"react/jsx-filename-extension": [0, { "extensions": ["js", "jsx"] }],
 		// js, jsx Extensions allowed.
 		"arrow-parens": ["warn", "as-needed"],
 		// If there is only one arrow function parameter, skip bracket
@@ -14,15 +26,17 @@
 		// When there is a console that is used, release the rule build error
 		"import/prefer-default-export": ["off"],
 		// When there is a export const that is used, release the rule build error
-		"react-hooks/exhaustive-deps": ["warn"],
+		"react-hooks/exhaustive-deps": ["off"],
 		// Mitigating the rule of forcibly adding dependence when hooks' dependence arrangement is insufficient.
-		"react/jsx-props-no-spreading": ["warn"],
+		"react/jsx-props-no-spreading": ["off"],
 		// When there is a props spreading that is used, release the rule build error
 		"react/prop-types": ["off"],
 		// When there is a props type check that is not used, release the rule build error
-		"no-underscore-dangle": ["off"]
+		"no-underscore-dangle": ["off"],
 		// When there is a camelCase that is not used, release the rule build error
 		// ex) eslint_camel
+		"no-empty-function": "off",
+		"@typescript-eslint/no-empty-function": ["off"]
 	},
 	"settings": {
 		"import/resolver": {
