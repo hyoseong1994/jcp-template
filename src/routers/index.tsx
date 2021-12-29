@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
-import Header from 'components/organization/Header';
-import Footer from 'components/organization/Footer';
-import Sider from 'components/organization/Sider';
+import Header from '../components/organization/Header';
+import Footer from '../components/organization/Footer';
+import Sider from '../components/organization/Sider';
 
 import 'antd/dist/antd.css';
 
-const About = React.lazy(() => import('components/template/About'));
-const Dashboard = React.lazy(() => import('components/template/Dashboard'));
-const NoMatch = React.lazy(() => import('components/template/NoMatch'));
+const About = React.lazy(() => import('../components/template/About'));
+const Dashboard = React.lazy(() => import('../components/template/Dashboard'));
+const NoMatch = React.lazy(() => import('../components/template/NoMatch'));
 const { Content } = Layout;
 
 export default function router(): JSX.Element {
@@ -28,11 +28,18 @@ export default function router(): JSX.Element {
 						}}
 					>
 						<Routes>
-							<Route index element={<Home />} />
+							<Route
+								index
+								element={
+									<div>
+										<h2>Home</h2>
+									</div>
+								}
+							/>
 							<Route
 								path="about"
 								element={
-									<React.Suspense fallback={<>...</>}>
+									<React.Suspense fallback={<div>loading...</div>}>
 										<About />
 									</React.Suspense>
 								}
@@ -40,7 +47,7 @@ export default function router(): JSX.Element {
 							<Route
 								path="dashboard/*"
 								element={
-									<React.Suspense fallback={<>...</>}>
+									<React.Suspense fallback={<div>loading...</div>}>
 										<Dashboard />
 									</React.Suspense>
 								}
@@ -52,13 +59,5 @@ export default function router(): JSX.Element {
 			</Layout>
 			<Footer />
 		</>
-	);
-}
-
-function Home() {
-	return (
-		<div>
-			<h2>Home</h2>
-		</div>
 	);
 }

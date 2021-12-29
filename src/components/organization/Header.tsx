@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'components/atoms/Button';
+import Button from '../../components/atoms/Button';
 import { PageHeader } from 'antd';
 
 const Header = (): JSX.Element => (
@@ -9,9 +9,9 @@ const Header = (): JSX.Element => (
 		title="Title"
 		subTitle="This is a subtitle"
 		extra={[
-			<Button key="3" label="Operation" onClick={() => {}} />,
-			<Button key="2" label="Operation" onClick={() => {}} />,
-			<Button key="1" label="Primary" onClick={() => {}} type="primary" />,
+			<Button key="1" id="first" label="Operation" onClick={() => {}} />,
+			<Button key="2" id="second" label="Operation" onClick={() => {}} />,
+			<Button key="3" id="third" label="Primary" onClick={() => {}} type="primary" />,
 		]}
 	/>
 );
